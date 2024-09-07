@@ -10,6 +10,7 @@ importers:
       '@nestjs/cli': ^10.0.0
       '@nestjs/common': ^10.0.0
       '@nestjs/core': ^10.0.0
+      '@nestjs/mapped-types': '*'
       '@nestjs/platform-express': ^10.0.0
       '@nestjs/schematics': ^10.0.0
       '@nestjs/testing': ^10.0.0
@@ -36,6 +37,7 @@ importers:
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common/10.4.1_bx7ns4a6im6ljmadd2c7gy34li
       '@nestjs/core': registry.npmmirror.com/@nestjs/core/10.4.1_66b2dmtvg6dwyoi6ioycpp5iee
+      '@nestjs/mapped-types': registry.npmmirror.com/@nestjs/mapped-types/2.0.5_5zqtfw4voevhvzzmooblgjqcae
       '@nestjs/platform-express': registry.npmmirror.com/@nestjs/platform-express/10.4.1_4ortadork4advkvxue5nriyhly
       reflect-metadata: registry.npmmirror.com/reflect-metadata/0.2.2
       rxjs: registry.npmmirror.com/rxjs/7.8.1
@@ -1124,6 +1126,26 @@ packages:
       uid: registry.npmmirror.com/uid/2.0.2
     transitivePeerDependencies:
       - encoding
+
+  registry.npmmirror.com/@nestjs/mapped-types/2.0.5_5zqtfw4voevhvzzmooblgjqcae:
+    resolution: {integrity: sha512-bSJv4pd6EY99NX9CjBIyn4TVDoSit82DUZlL4I3bqNfy5Gt+gXTa86i3I/i0iIV9P4hntcGM5GyO+FhZAhxtyg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/mapped-types/-/mapped-types-2.0.5.tgz}
+    id: registry.npmmirror.com/@nestjs/mapped-types/2.0.5
+    name: '@nestjs/mapped-types'
+    version: 2.0.5
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      class-transformer: ^0.4.0 || ^0.5.0
+      class-validator: ^0.13.0 || ^0.14.0
+      reflect-metadata: ^0.1.12 || ^0.2.0
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@nestjs/common': registry.npmmirror.com/@nestjs/common/10.4.1_bx7ns4a6im6ljmadd2c7gy34li
+      reflect-metadata: registry.npmmirror.com/reflect-metadata/0.2.2
+    dev: false
 
   registry.npmmirror.com/@nestjs/platform-express/10.4.1_4ortadork4advkvxue5nriyhly:
     resolution: {integrity: sha512-ccfqIDAq/bg1ShLI5KGtaLaYGykuAdvCi57ohewH7eKJSIpWY1DQjbgKlFfXokALYUq1YOMGqjeZ244OWHfDQg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/platform-express/-/platform-express-10.4.1.tgz}
