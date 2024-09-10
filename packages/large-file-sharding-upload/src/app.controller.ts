@@ -10,6 +10,7 @@ import {
 import { AppService } from './app.service';
 import { FilesInterceptor } from '@nestjs/platform-express';
 import * as fs from 'fs';
+import * as OSS from 'ali-oss';
 
 @Controller()
 export class AppController {
@@ -18,6 +19,33 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('oss')
+  async oss() {
+    const config = {
+      region: 'oss-cn-beijing',
+      bucket: 'nest-test12',
+      accessKeyId: '',
+      accessKeySecret: '',
+    };
+    const client = new OSS(config);
+    const date = new Date();
+    date.setDate(date.getDate() + 1);
+    const res = client.calculatePostSignature({
+      expiration: date.toISOString(),
+      conditions: [
+        ['content-length-range', 0, 1048576000], //设置上传文件的大小限制。
+      ],
+    });
+    console.log(res);
+    const location = await client.getBucketLocation();
+    const host = `http://${config.bucket}.${location.location}.aliyuncs.com`;
+    console.log(host);
+    return {
+      ...res,
+      host,
+    };
   }
 
   @Post('upload')

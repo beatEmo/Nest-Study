@@ -2,42 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <input id="fileInput" type="file" multiple />
+    <input id="fileInput" type="file" />
+
     <script>
-      const fileInput = document.querySelector('#fileInput');
+      const fileInput = document.getElementById('fileInput');
 
-      const chunkSize = 20 * 1024;
-      fileInput.onchange = async function () {
+      async function getOSSInfo() {
+        const res = await fetch('http://localhost:3000/oss');
+        return res.json();
+      }
+
+      fileInput.onchange = async () => {
         const file = fileInput.files[0];
+        const ossInfo = await getOSSInfo();
+        console.log(ossInfo);
+        const formdata = new FormData();
+        formdata.append('key', file.name);
+        formdata.append('OSSAccessKeyId', ossInfo.OSSAccessKeyId);
+        formdata.append('policy', ossInfo.policy);
+        formdata.append('signature', ossInfo.Signature);
+        formdata.append('success_action_status', '200');
+        formdata.append('file', file);
 
-        const chunks = [];
-        let currentChunk = 0;
-        while (currentChunk < file.size) {
-          chunks.push(file.slice(currentChunk, currentChunk + chunkSize));
-          currentChunk += chunkSize;
-        }
-
-        const randomStr = Math.random().toString().slice(2, 8);
-
-        const trasks = chunks.map((chunk, index) => {
-          const formData = new FormData();
-          formData.append('name', randomStr + '_' + file.name + '-' + index);
-          formData.append('files', chunk);
-          return fetch('http://localhost:3000/upload', {
-            method: 'POST',
-            body: formData,
-          });
+        const res = await fetch(ossInfo.host, {
+          method: 'POST',
+          body: formdata,
         });
+        console.log(res, 'spppppppppp');
 
-        await Promise.all(trasks);
-        fetch(
-          'http://localhost:3000/merge?name=' + randomStr + '_' + file.name,
-        );
+        // ossInfo.host + '/' + file.name 这个就是图片的地址
+        if (res.status === 200) {
+          const img = document.createElement('img');
+          img.src = ossInfo.host + '/' + file.name;
+          document.body.append(img);
+
+          alert('上传成功');
+        }
       };
     </script>
   </body>

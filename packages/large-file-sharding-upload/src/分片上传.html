@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="fileInput" type="file" multiple />
+    <script>
+      const fileInput = document.querySelector('#fileInput');
+
+      const chunkSize = 20 * 1024;
+      fileInput.onchange = async function () {
+        const file = fileInput.files[0];
+
+        const chunks = [];
+        let currentChunk = 0;
+        while (currentChunk < file.size) {
+          chunks.push(file.slice(currentChunk, currentChunk + chunkSize));
+          currentChunk += chunkSize;
+        }
+
+        const randomStr = Math.random().toString().slice(2, 8);
+
+        const trasks = chunks.map((chunk, index) => {
+          const formData = new FormData();
+          formData.append('name', randomStr + '_' + file.name + '-' + index);
+          formData.append('files', chunk);
+          return fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            body: formData,
+          });
+        });
+
+        await Promise.all(trasks);
+        fetch(
+          'http://localhost:3000/merge?name=' + randomStr + '_' + file.name,
+        );
+      };
+    </script>
+  </body>
+</html>
