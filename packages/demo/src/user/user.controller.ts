@@ -6,24 +6,35 @@ import {
   Patch,
   Param,
   Delete,
+  Inject,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { AaaService } from 'src/aaa/aaa.service';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
+
+  @Inject(AaaService)
+  aaaService: AaaService;
+
+  @Get()
+  getHello(): any {
+    // return this.appService.getHello();
+    return this.aaaService.create(null);
+  }
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
     return this.userService.create(createUserDto);
   }
 
-  @Get()
-  findAll() {
-    return this.userService.findAll();
-  }
+  // @Get()
+  // findAll() {
+  //   return this.userService.findAll();
+  // }
 
   @Get(':id')
   findOne(@Param('id') id: string) {

@@ -1,0 +1,52 @@
+<mxfile host="65bd71144e">
+    <diagram id="wzuYDvqtbCrvo70ruL66" name="第 1 页">
+        <mxGraphModel dx="1084" dy="536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="960" y="130" width="610" height="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&lt;h1&gt;aaa.module.ts&lt;/h1&gt;&lt;div style=&quot;color: rgb(238, 240, 249); background-color: rgb(23, 25, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;@&lt;span style=&quot;color: #00daef;&quot;&gt;Module&lt;/span&gt;({&lt;/div&gt;&lt;div&gt;&amp;nbsp; &lt;span style=&quot;color: #4bf3c8;&quot;&gt;controllers&lt;/span&gt;: [&lt;span style=&quot;color: #acafff;&quot;&gt;AaaController&lt;/span&gt;],&lt;/div&gt;&lt;div&gt;&amp;nbsp; &lt;span style=&quot;color: #4bf3c8;&quot;&gt;providers&lt;/span&gt;: [&lt;span style=&quot;color: #acafff;&quot;&gt;AaaService&lt;/span&gt;],&lt;/div&gt;&lt;div&gt;})&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #54b9ff;&quot;&gt;export&lt;/span&gt; &lt;span style=&quot;color: #54b9ff;&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #acafff;&quot;&gt;AaaModule&lt;/span&gt; {}&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="160" width="250" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;h1&gt;aaa.controller.ts&lt;/h1&gt;&lt;div style=&quot;color: rgb(238, 240, 249); background-color: rgb(23, 25, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div&gt;@&lt;span style=&quot;color: #00daef;&quot;&gt;Controller&lt;/span&gt;(&lt;span style=&quot;color: #ffd493;&quot;&gt;'aaa'&lt;/span&gt;)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #54b9ff;&quot;&gt;export&lt;/span&gt; &lt;span style=&quot;color: #54b9ff;&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #acafff;&quot;&gt;AaaController&lt;/span&gt; {}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="150" width="240" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;h1&gt;aaa.service.ts&lt;/h1&gt;&lt;div style=&quot;color: rgb(238, 240, 249); background-color: rgb(23, 25, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div&gt;@&lt;span style=&quot;color: #00daef;&quot;&gt;Injectable&lt;/span&gt;()&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #54b9ff;&quot;&gt;export&lt;/span&gt; &lt;span style=&quot;color: #54b9ff;&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #acafff;&quot;&gt;AaaService&lt;/span&gt; {}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="280" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="4">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="250" y="390" as="sourcePoint"/>
+                        <mxPoint x="278" y="237" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="" style="endArrow=classic;html=1;fillColor=#60a917;strokeColor=#2D7600;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="400" y="195" as="sourcePoint"/>
+                        <mxPoint x="278" y="237" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="" style="endArrow=classic;html=1;exitX=-0.005;exitY=0.6;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#1ba1e2;strokeColor=#006EAF;" edge="1" parent="1" source="5">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="352" y="328" as="sourcePoint"/>
+                        <mxPoint x="248" y="259" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="&lt;h1&gt;xxx.ts&lt;/h1&gt;&lt;div style=&quot;color: rgb(238, 240, 249); background-color: rgb(23, 25, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div style=&quot;line-height: 19px;&quot;&gt;&lt;div&gt;@&lt;span style=&quot;color: #00daef;&quot;&gt;Injectable&lt;/span&gt;()&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: #54b9ff;&quot;&gt;export&lt;/span&gt; &lt;span style=&quot;color: #54b9ff;&quot;&gt;class&lt;/span&gt; &lt;span style=&quot;color: #acafff;&quot;&gt;xxx&lt;/span&gt; {}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="410" width="210" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fillColor=#1ba1e2;strokeColor=#006EAF;" edge="1" parent="1" source="10">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="408.95000000000005" y="344" as="sourcePoint"/>
+                        <mxPoint x="248" y="264" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="任意的class都可以作为providers" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#B09500;fillColor=#e3c800;fontColor=#000000;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="450" width="200" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
